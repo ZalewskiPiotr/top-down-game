@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://mnidwkjv7n7o"]
+[gd_scene load_steps=17 format=3 uid="uid://mnidwkjv7n7o"]
 
 [ext_resource type="Texture2D" uid="uid://ck328iuy1lf7r" path="res://assets/characters/human/idle/base_idle_strip9.png" id="1_ojxy8"]
 [ext_resource type="Texture2D" uid="uid://cnfmqbomnh7ph" path="res://assets/characters/human/idle/longhair_idle_strip9.png" id="2_dfili"]
@@ -9,52 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://tkoqo73htxis" path="res://assets/characters/human/run/longhair_run_strip8.png" id="5_os882"]
 [ext_resource type="Texture2D" uid="uid://24uoiw5ga4qa" path="res://assets/characters/human/run/tools_run_strip8.png" id="6_12vrl"]
 [ext_resource type="Texture2D" uid="uid://qvrokr4waqk5" path="res://assets/characters/human/walking/tools_walk_strip8.png" id="6_v88jn"]
+[ext_resource type="Script" path="res://characters/player/state_machine.gd" id="10_8cyb1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oxweb"]
 radius = 5.0
 height = 16.0
-
-[sub_resource type="Animation" id="Animation_lrlvh"]
-resource_name = "idle"
-length = 0.9
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites/Idle/Body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprites/Idle/Hair:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprites/Idle/ToolHand:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
-}
 
 [sub_resource type="Animation" id="Animation_hl2g3"]
 length = 0.001
@@ -167,46 +126,46 @@ tracks/8/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_rws7r"]
-resource_name = "walk"
-length = 0.8
+[sub_resource type="Animation" id="Animation_lrlvh"]
+resource_name = "idle"
+length = 0.9
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprites/Walk/Body:frame")
+tracks/0/path = NodePath("Sprites/Idle/Body:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprites/Walk/Hair:frame")
+tracks/1/path = NodePath("Sprites/Idle/Hair:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprites/Walk/ToolHand:frame")
+tracks/2/path = NodePath("Sprites/Idle/ToolHand:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 
 [sub_resource type="Animation" id="Animation_3ltl8"]
@@ -242,6 +201,48 @@ tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("Sprites/Run/ToolHand:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_rws7r"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Walk/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/Walk/Hair:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/Walk/ToolHand:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -335,3 +336,6 @@ hframes = 8
 [node name="ToolHand" type="Sprite2D" parent="Sprites/Walk"]
 texture = ExtResource("6_v88jn")
 hframes = 8
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("10_8cyb1")
