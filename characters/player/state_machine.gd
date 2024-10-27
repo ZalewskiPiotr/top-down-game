@@ -54,4 +54,4 @@ func _process(delta: float) -> void:
 
 	
 func _physics_process(delta: float) -> void:
-	state.physich_update(delta)
+	state.physics_update(delta)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://mnidwkjv7n7o"]
+[gd_scene load_steps=20 format=3 uid="uid://mnidwkjv7n7o"]
 
 [ext_resource type="Texture2D" uid="uid://ck328iuy1lf7r" path="res://assets/characters/human/idle/base_idle_strip9.png" id="1_ojxy8"]
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_pcvh6"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://tkoqo73htxis" path="res://assets/characters/human/run/longhair_run_strip8.png" id="5_os882"]
 [ext_resource type="Texture2D" uid="uid://24uoiw5ga4qa" path="res://assets/characters/human/run/tools_run_strip8.png" id="6_12vrl"]
 [ext_resource type="Texture2D" uid="uid://qvrokr4waqk5" path="res://assets/characters/human/walking/tools_walk_strip8.png" id="6_v88jn"]
+[ext_resource type="Script" path="res://characters/player/states/walk.gd" id="8_p87dx"]
 [ext_resource type="Script" path="res://characters/player/state_machine.gd" id="10_8cyb1"]
+[ext_resource type="Script" path="res://characters/player/states/idle.gd" id="12_i86ns"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oxweb"]
 radius = 5.0
@@ -325,7 +327,6 @@ texture = ExtResource("6_12vrl")
 hframes = 8
 
 [node name="Walk" type="Node2D" parent="Sprites"]
-visible = false
 
 [node name="Body" type="Sprite2D" parent="Sprites/Walk"]
 texture = ExtResource("4_i7fnd")
@@ -341,3 +342,9 @@ hframes = 8
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("10_8cyb1")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("12_i86ns")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("8_p87dx")

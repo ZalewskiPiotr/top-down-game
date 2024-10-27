@@ -17,7 +17,7 @@ func update(_delta: float) -> void:
 	
 
 ## Called by the state machine on the engine's physics update tick
-func physich_update(_delta: float) -> void:
+func physics_update(_delta: float) -> void:
 	pass
 	
 
