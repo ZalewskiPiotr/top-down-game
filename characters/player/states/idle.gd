@@ -2,6 +2,7 @@ extends PlayerState
 
 func enter(previous_state_path: String, data := {}) -> void:
 	player.velocity = Vector2.ZERO
+	player.flip_idle()
 	player.turn_on_idle()
 	player.animation.play("idle")
 
