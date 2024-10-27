@@ -1,3 +1,4 @@
+## This state machine is based on https://www.gdquest.com/tutorial/godot/design-patterns/finite-state-machine/
 ## The finite state machine class uses the state. It keeps track of the active state 
 ## (for example, “running”) and calls the state’s functions when needed. In the game,
 ## the state machine will be the parent node of all states.
