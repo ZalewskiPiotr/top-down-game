@@ -13,6 +13,9 @@ func physics_update(_delta: float) -> void:
 	if Input.is_action_pressed("move_left") and (Input.is_action_pressed("move_right")):
 		return
 	
-	# Przejście do chodzenia
-	if Input.is_action_pressed("move_left") or (Input.is_action_pressed("move_right")):
-		finished.emit(WALK)
+	# Zmiana stanu
+	if Input.is_action_pressed("run") and (Input.is_action_pressed("move_left") or 
+			Input.is_action_pressed("move_right")):
+		finished.emit(RUN) # Bieganie
+	elif Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+		finished.emit(WALK) # Chodzenie

@@ -54,4 +54,8 @@ func flip_walk() -> void:
 func flip_idle() -> void:
 	for sprite_node: Sprite2D in sprites_idle.get_children():
 		sprite_node.flip_h = self.character_flip
+
+func flip_run() -> void:
+	for sprite_node: Sprite2D in sprites_run.get_children():
+		sprite_node.flip_h = self.character_flip
 #endregion

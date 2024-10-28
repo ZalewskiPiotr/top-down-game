@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://mnidwkjv7n7o"]
+[gd_scene load_steps=21 format=3 uid="uid://mnidwkjv7n7o"]
 
 [ext_resource type="Texture2D" uid="uid://ck328iuy1lf7r" path="res://assets/characters/human/idle/base_idle_strip9.png" id="1_ojxy8"]
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_pcvh6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://characters/player/states/walk.gd" id="8_p87dx"]
 [ext_resource type="Script" path="res://characters/player/state_machine.gd" id="10_8cyb1"]
 [ext_resource type="Script" path="res://characters/player/states/idle.gd" id="12_i86ns"]
+[ext_resource type="Script" path="res://characters/player/states/run.gd" id="14_qlqod"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oxweb"]
 radius = 5.0
@@ -348,3 +349,6 @@ script = ExtResource("12_i86ns")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("8_p87dx")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("14_qlqod")
