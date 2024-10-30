@@ -265,6 +265,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 128
 script = ExtResource("1_pcvh6")
 metadata/_edit_group_ = true
 
