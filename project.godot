@@ -48,6 +48,7 @@ run={
 [layer_names]
 
 2d_physics/layer_1="Terrain objects"
+2d_physics/layer_2="Collectibles"
 2d_physics/layer_8="Player"
 
 [rendering]

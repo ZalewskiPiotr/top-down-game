@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://b06457t5rha2i"]
+[gd_scene load_steps=11 format=4 uid="uid://b06457t5rha2i"]
 
 [ext_resource type="Texture2D" uid="uid://bfhpgu4tj1qtd" path="res://assets/tileset/spr_tileset_sunnysideworld_16px.png" id="1_dugy0"]
 [ext_resource type="Texture2D" uid="uid://cnes6m7lp4805" path="res://assets/tileset/spr_tileset_sunnysideworld_forest_32px.png" id="2_tiy37"]
 [ext_resource type="PackedScene" uid="uid://mnidwkjv7n7o" path="res://characters/player/player.tscn" id="3_g40r1"]
+[ext_resource type="PackedScene" uid="uid://dor2tspmcu4ey" path="res://resources/stone.tscn" id="4_jn7gc"]
+[ext_resource type="PackedScene" uid="uid://brbvgdlkjt6g6" path="res://resources/wood.tscn" id="5_5i6ls"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8vf6"]
 texture = ExtResource("1_dugy0")
@@ -3503,6 +3505,9 @@ sources/1 = SubResource("TileSetAtlasSource_g6rjk")
 
 [node name="WorldHome" type="Node2D"]
 
+[node name="Stone" parent="." instance=ExtResource("4_jn7gc")]
+position = Vector2(405, 440)
+
 [node name="Player" parent="." instance=ExtResource("3_g40r1")]
 position = Vector2(312, 534)
 
@@ -3516,3 +3521,6 @@ tile_set = SubResource("TileSet_jovqb")
 [node name="TerrainObjects" type="TileMapLayer" parent="Layers"]
 tile_map_data = PackedByteArray("AAAdACQAAAA1AAEAAAAkACUAAAA1AAEAAAAgAB8AAAA1AAEAAAAnACAAAAA1AAEAAAAOABcAAAA1AAEAAAAyACIAAAAgAAUAAAAvACQAAAAgAAUAAAAuACAAAAAgAAUAAAA0ACAAAAAgAAUAAAAwACEAAAAgAAUAAAAzACUAAAAgAAUAAAAtACMAAAAgAAUAAAA0ACIAAAAgAAUAAAAxACQAAAAgAAUAAAAyAB8AAAAgAAUAAAAwAB8AAAAgAAUAAAAvAB0AAAAgAAUAAAA1AB8AAAAfAAUAAAA1AB4AAAAfAAUAAAAzABwAAAAfAAUAAAAxABwAAAAfAAUAAAA3ACMAAAAfAAUAAAA4ACEAAAAfAAUAAAA4ACAAAAAfAAUAAAA7AB8AAAAfAAUAAAA7AB0AAAAfAAUAAAA2ACUAAAAfAAUAAAA6ACYAAAAfAAUAAAA=")
 tile_set = SubResource("TileSet_lu22q")
+
+[node name="wood" parent="." instance=ExtResource("5_5i6ls")]
+position = Vector2(322, 450)
